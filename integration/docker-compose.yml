@@ -1,0 +1,13 @@
+version: '3'
+services:
+  container_a:
+    build: ./container_a
+    ports:
+      - "5000:5000"
+
+  container_b:
+    build: ./container_b
+    ports:
+      - "5001:5001"
+    depends_on:
+      - container_a
